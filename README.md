@@ -12,7 +12,7 @@ This project uses the Gradle build system. To build, use the "gradlew build" com
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/harshprashar/Github-Repository.git`
+- Clone this repo to your local machine using `https://github.com/codegenerator-tools/Github-Repository/Github-Repository.git`
 
 ---
 ## Contributing
@@ -33,7 +33,7 @@ This project uses the Gradle build system. To build, use the "gradlew build" com
 
 ### Step 3
 
-- 🔃 Create a new pull request using <a href="https://github.com/harshprashar/compare/" target="_blank">`https://github.com/harshprashar/compare/`</a>.
+- 🔃 Create a new pull request using <a href="https://github.com/codegenerator-tools/Github-Repository/compare/" target="_blank">`https://github.com/codegenerator-tools/Github-Repository/compare/`</a>.
 
 ---
 
