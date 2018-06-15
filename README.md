@@ -2,7 +2,7 @@
 
 > This project aims to provide the latest 'Android Github repositories' on your Android Phone. It shows the list of repositories and the detailed information for the list item
 
-> Android + Kotlin + Java + retrofit2
+> Tools :  Android + Kotlin + Java + retrofit2
 
 ---
 
