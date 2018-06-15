@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.github.repo.android.mainview.RepositoryDetailActivity">
+
+    <TextView
+        android:id="@+id/detail_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:textSize="@dimen/repository_detail_text_size"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="@dimen/detail_view_margin"
+    />
+
+</android.support.constraint.ConstraintLayout>
