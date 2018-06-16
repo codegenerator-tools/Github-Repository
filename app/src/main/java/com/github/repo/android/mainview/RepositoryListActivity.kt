@@ -37,7 +37,7 @@ class RepositoryListActivity : AppCompatActivity() {
         repositoryList = findViewById(R.id.recipe_list_view) as ListView
 
         //To check whether network connectivity is available
-        //uncomment below
+        //uncomment below, make sure the instance is registered prior to its use
         /*
         if( !(NetworkStateManager.getInstance().isNetworkAvailable) ) {
 
