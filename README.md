@@ -1,6 +1,6 @@
 # Github-Repository
 
-> This project aims to provide the latest 'Android Github repositories' on your Android Phone. It shows the list of repositories and the detailed information of the repository
+> This project aims to provide the latest 'Android Github repositories' on Android Device. It shows the list of repositories and the detailed information of the repository
 
 > Tools Used to build the application are Android, Kotlin, Java and retrofit2
 
