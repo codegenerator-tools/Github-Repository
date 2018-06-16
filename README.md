@@ -37,6 +37,18 @@ This project uses the Gradle build system. To build, use the "gradlew build" com
 
 ---
 
+## Project Structure
+
+![alt text](https://github.com/codegenerator-tools/Github-Repository/blob/master/Project%20Structure.png)
+
+## Sequence Diagram
+
+- Added as a quick reference to get started
+
+![alt text](https://github.com/codegenerator-tools/Github-Repository/blob/master/Github%20Repository%20Pull.png)
+
+---
+
 ## License
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
