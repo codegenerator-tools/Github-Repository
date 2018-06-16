@@ -68,7 +68,6 @@ public class NetworkStateManager {
      *
      * @param context
      */
-
     public void initialize(Context context) {
 
         if(mConnectivityReceiver == null) {
@@ -89,10 +88,14 @@ public class NetworkStateManager {
         onConnectivityChanged(context, null);
     }
 
+    /**
+     * This method is used for un-registering the Network State change receiver
+     * 
+     */
     public void unRegister() {
 
         try {
-            if(mConnectivityReceiver != null) {
+            if (mConnectivityReceiver != null) {
 
                 mContext.unregisterReceiver(mConnectivityReceiver);
             }
@@ -105,13 +108,12 @@ public class NetworkStateManager {
      *
      * Receiver will be triggered on any change in network state
      */
-
     public class ConnectivityReceiver extends BroadcastReceiver {
 
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            Log.i(MOD_NETWORK, "broadcast received");
+            Logger.i(Logger.MOD_NETWORK, "broadcast received");
 
             ConnectivityManager connectivityManager = ((ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE));
@@ -127,10 +129,9 @@ public class NetworkStateManager {
      * @param context
      * @param networkInfo
      */
-
     private synchronized void onConnectivityChanged(Context context, NetworkInfo networkInfo) {
 
-        Log.i(MOD_NETWORK, "Connectivity changed");
+        Logger.i(Logger.MOD_NETWORK, "Connectivity changed");
 
         int networkType = (networkInfo != null && networkInfo.isConnected()) ? networkInfo.getType()
                 : CONNECTIVITY_TYPE_NONE;
@@ -145,7 +146,7 @@ public class NetworkStateManager {
             return;
         }
 
-        Log.i(MOD_NETWORK, "Updating network state.... to Type -> " + networkType);
+        Logger.i(Logger.MOD_NETWORK, "Updating network state.... to Type -> " + networkType);
 
         mNetworkType = networkType;
 
@@ -168,7 +169,6 @@ public class NetworkStateManager {
      * Makes sure if we have IP connectivity
      * It uses the default server.
      */
-
     private class ConnectionTask implements Runnable {
 
         @Override
@@ -176,7 +176,7 @@ public class NetworkStateManager {
 
             if (hasIpConnectivity() == true) {
 
-                Log.i(MOD_NETWORK, "\tIP connectivity found, updating network state to connected");
+                Logger.i(Logger.MOD_NETWORK, "\tIP connectivity found, updating network state to connected");
 
                 setNetworkState(CONNECTED_TO_NETWORK);
                 broadcastNetworkState(getNetworkState()); //TODO: can be enabled to notify users (stub)
@@ -184,15 +184,24 @@ public class NetworkStateManager {
         }
     }
 
+    /**
+     * This method is used to determine the connected network state
+     * It uses Google URL -> "http://www.google.com" to identify the result
+     *
+     * Also, to avoid the situations when system is connected to network
+     * but has no internet connection
+     *
+     * @return true if success, otherwise false
+     */
     private boolean hasIpConnectivity() {
 
-        Log.i(MOD_NETWORK, "Checking for IP connectivitiy");
+        Logger.i(Logger.MOD_NETWORK, "Checking for IP connectivitiy");
 
         try {
 
             if (mNetworkType == CONNECTIVITY_TYPE_NONE) {
 
-                Log.i(MOD_NETWORK, "\tNo IP connectivity");
+                Logger.i(Logger.MOD_NETWORK, "\tNo IP connectivity");
 
                 return false;
             }
@@ -205,7 +214,7 @@ public class NetworkStateManager {
             urlConnect.connect();
             urlConnect.disconnect();
 
-            Log.i(MOD_NETWORK, "\tconnected to network");
+            Logger.i(Logger.MOD_NETWORK, "\tconnected to network");
 
             return true;
 
@@ -226,10 +235,20 @@ public class NetworkStateManager {
         }
     }
 
+    /**
+     * To determine the type of connection as wifi
+     *
+     * @return true if success, otherwise false
+     */
     public boolean isWifiConnected() {
         return mNetworkType == ConnectivityManager.TYPE_WIFI;
     }
 
+    /**
+     * To determine whether device is connected to any kind of network
+     *
+     * @return true if success, otherwise false
+     */
     public boolean isNetworkAvailable() {
 
         if (sNetworkState.get() == (CONNECTED_TO_NETWORK)) {
@@ -241,14 +260,31 @@ public class NetworkStateManager {
         }
     }
 
+    /**
+     * Synchronized network state update
+     * To produce only when consumed
+     *
+     * @param state
+     */
     private void setNetworkState(int state) {
         sNetworkState.set(state);
     }
 
+    /**
+     * Synchronized network state update
+     * To consume only when it is available/produced
+     *
+     * @return NetworkState
+     */
     public int getNetworkState() {
         return sNetworkState.get();
     }
 
+    /**
+     * To reset the connection state to none
+     *
+     * @param closeApp
+     */
     public void reset(boolean closeApp) {
 
         mNetworkType = CONNECTIVITY_TYPE_NONE;
@@ -260,10 +296,16 @@ public class NetworkStateManager {
         }
     }
 
+    /**
+     * To send the events to the running activities
+     * It can be utilized to handle data execution based on the network state
+     *
+     * @param state
+     */
     private void broadcastNetworkState(int state) {
-       /* Log.d(MOD_NETWORK, "Sending Broadcast for Network state change.");
-        Intent intent = new Intent(NETWORK_STATE_CONSTANTS.NETWORK_STATE_CHANGE_INTENT);
-        intent.putExtra(NETWORK_STATE_CONSTANTS.NETWORK_STATE, state);
-        LocalBroadcastManager.getInstance(AipApplication.sContext).sendBroadcast(intent);*/
+
+        //TODO: This section can be modified and used on need basis
+        //currently marked null
+        //Logger.d(Logger.MOD_NETWORK, "Sending Broadcast for Network state change.");
     }
 }
