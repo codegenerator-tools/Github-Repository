@@ -6,7 +6,9 @@
 
 ---
 
-Table of contents <a name="table-of-contents"></a>
+<a name="table-of-contents"></a>
+
+Table of contents 
 =================
 
 <!--ts-->
@@ -22,26 +24,36 @@ Table of contents <a name="table-of-contents"></a>
    * [License](#license)
 <!--te-->
 
-## Installation <a name="installation"></a>
+<a name="installation"></a>
 
-#### 1. Clone <a name="clone"></a>
+## Installation 
+
+<a name="clone"></a>
+
+#### 1. Clone 
 
 - Clone this repo to your local machine using `https://github.com/codegenerator-tools/Github-Repository/Github-Repository.git`
 
-#### 2. Building the Application <a name="building"></a>
+<a name="building"></a>
+
+#### 2. Building the Application 
 
 * Open Android Studio and select `File->Open...` or from the Android Launcher select `Import project` and navigate to the root directory of your project.
 * Click 'OK' to open the the project in Android Studio.
 * A Gradle sync should start, but you can force a sync and build the 'app' module as needed.
 
-#### 3. Running the Application <a name="running-the-application"></a>
+<a name="running-the-application"></a>
+
+#### 3. Running the Application 
 
 Connect an Android device to your development machine.
 
 * Select `Run -> Run 'app'` (or `Debug 'app'`) from the menu bar
 * Select the device you wish to run the app on and click 'OK'
 
-#### 4. Using the Application <a name="using-the-application"></a>
+<a name="using-the-application"></a>
+
+#### 4. Using the Application 
 
 As the app launches, it should bring the list of Android Github repositories
 The list should contain the repository name and the last modified timestamp.
@@ -50,11 +62,15 @@ It requires internet connection to be available in the mobile
 
 ---
 
-## Project Structure <a name="project-structure"></a>
+<a name="project-structure"></a>
+
+## Project Structure 
 
 ![alt text](https://github.com/codegenerator-tools/Github-Repository/blob/master/Project%20Structure.png)
 
-## Sequence Diagram <a name="sequence-diagram"></a>
+<a name="sequence-diagram"></a>
+
+## Sequence Diagram 
 
 - Added as a quick reference to get started
 
@@ -62,7 +78,9 @@ It requires internet connection to be available in the mobile
 
 ---
 
-## Contributing <a name="contributing"></a>
+<a name="contributing"></a>
+
+## Contributing
 
 > To get started...
 
@@ -84,7 +102,9 @@ It requires internet connection to be available in the mobile
 
 ---
 
-## License <a name="license"></a>
+<a name="license"></a>
+
+## License 
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
