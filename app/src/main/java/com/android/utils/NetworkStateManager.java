@@ -90,7 +90,7 @@ public class NetworkStateManager {
 
     /**
      * This method is used for un-registering the Network State change receiver
-     * 
+     *
      */
     public void unRegister() {
 
